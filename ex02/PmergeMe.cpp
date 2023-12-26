@@ -16,14 +16,13 @@ PmergeMe::PmergeMe(const PmergeMe &other)
 // Vector sort functions
 void PmergeMe::mergeInsertSortVector(std::vector<int> &container, int start, int end)
 {
-	int newEnd;
 	if (start < end)
 	{
 		if ((end - start) < 10)
 			insertSortVector(container, start, end);
 		else
 		{
-			newEnd = start + (end - start) / 2;
+			int newEnd = start + (end - start) / 2;
 			mergeInsertSortVector(container, start, newEnd);
 			mergeInsertSortVector(container, newEnd + 1, end);
 			mergeSortVector(container, start, newEnd, end);
@@ -42,6 +41,7 @@ void PmergeMe::mergeSortVector(std::vector<int> &container, int start, int mid, 
 		left[i] = container[start + i];
 	for (j = 0; j < (end - mid); ++j)
 		right[j] = container[mid + 1 + j];
+
 	i = 0;
 	j = 0;
 	k = start;
@@ -74,14 +74,13 @@ void PmergeMe::insertSortVector(std::vector<int> &container, int start, int end)
 // Deque sort functions
 void PmergeMe::mergeInsertSortDeque(std::deque<int> &container, int start, int end)
 {
-	int newEnd;
 	if (start < end)
 	{
 		if ((end - start) < 10)
 			insertSortDeque(container, start, end);
 		else
 		{
-			newEnd = start + (end - start) / 2;
+			int newEnd = start + (end - start) / 2;
 			mergeInsertSortDeque(container, start, newEnd);
 			mergeInsertSortDeque(container, newEnd + 1, end);
 			mergeSortDeque(container, start, newEnd, end);
@@ -100,6 +99,7 @@ void PmergeMe::mergeSortDeque(std::deque<int> &container, int start, int mid, in
 		left[i] = container[start + i];
 	for (j = 0; j < (end - mid); ++j)
 		right[j] = container[mid + 1 + j];
+
 	i = 0;
 	j = 0;
 	k = start;
@@ -154,6 +154,7 @@ void PmergeMe::calculateTime(std::vector<int> &vector, std::deque<int> &deque, d
 	// Hesaplar dışarıdan verilen değişkene atanır.
 	double elapsed = static_cast<double>(end - start) / (CLOCKS_PER_SEC / 1000000.0);
 	vecTime = elapsed;
+
 	start = std::clock();
 	runDeque(deque);
 	end = std::clock();

@@ -6,7 +6,7 @@
 /*   By: aaslan <aaslan@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 23:08:25 by aaslan            #+#    #+#             */
-/*   Updated: 2023/12/25 02:41:42 by aaslan           ###   ########.fr       */
+/*   Updated: 2023/12/26 05:22:43 by aaslan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void BitcoinExchange::trim(std::string &str)
 // Validators
 bool BitcoinExchange::validateDate(std::string &date)
 {
-	if (date.find_first_not_of("0123456789-+.") != std::string::npos || std::count(date.begin(), date.end(), '-') != 2)
+	if (date.find_first_not_of("0123456789-") != std::string::npos || std::count(date.begin(), date.end(), '-') != 2)
 	{
 		std::cerr << "Error: bad input => " << date << std::endl;
 		return false;

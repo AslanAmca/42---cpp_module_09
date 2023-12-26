@@ -6,7 +6,7 @@
 /*   By: aaslan <aaslan@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/24 22:22:27 by aaslan            #+#    #+#             */
-/*   Updated: 2023/12/25 01:31:51 by aaslan           ###   ########.fr       */
+/*   Updated: 2023/12/26 05:19:49 by aaslan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,6 @@ int main(int argc, char **argv)
 	{
 		std::cerr << e.what() << '\n';
 	}
-
-	(void)argv;
 
 	return 0;
 }
